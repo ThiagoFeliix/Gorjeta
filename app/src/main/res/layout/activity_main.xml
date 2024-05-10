@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_margin="16dp"
+        android:textSize="32sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tips calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Preencha os campos abaixo para realizar o calculo da sua conta"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_total"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Digite valor total da conta"
+            android:inputType="numberDecimal"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <Spinner
+        android:id="@+id/spiner_number_of_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_total"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/spiner_number_of_people"
+        app:layout_constraintStart_toStartOf="@+id/spiner_number_of_people"
+        app:layout_constraintTop_toBottomOf="@+id/spiner_number_of_people" >
+
+
+        <RadioButton
+            android:id="@+id/rb_option_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="10%"
+            app:layout_constraintEnd_toEndOf="@+id/number_of_people"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="@+id/number_of_people"
+            app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+
+        <RadioButton
+            android:id="@+id/rb_option_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="15%"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rg_percentage" />
+
+        <RadioButton
+            android:id="@+id/rb_option_three"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="20%"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/number_of_people"
+            app:layout_constraintHorizontal_bias="0.787"
+            app:layout_constraintStart_toStartOf="@+id/number_of_people"
+            app:layout_constraintTop_toBottomOf="@+id/number_of_people"
+            app:layout_constraintVertical_bias="0.047" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_clean"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="limpar"
+        app:layout_constraintEnd_toStartOf="@+id/vertival_guideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spiner_number_of_people"
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertival_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"/>
+
+    <Button
+        android:id="@+id/btn_calculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="calcular"
+        app:layout_constraintEnd_toEndOf="@id/spiner_number_of_people"
+        app:layout_constraintStart_toEndOf="@+id/vertival_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculator"
+        tools:text="57.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
